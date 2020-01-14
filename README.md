@@ -22,5 +22,36 @@ Add macros to your Babel configuration:
 }
 ```
 
+Usage
+---
+
+```javascript
+import gfm from 'gfm.macro'
+
+const jsx = gfm`
+GitHub Flavored Markdown
+===
+`
+
+const withOptions = gfm(`
+<button>GitHub Flavored Button</button>
+`, { unsafe: true })
+```
+
+Options
+---
+
+The default options are as follows:
+
+```javascript
+const defaultOptions = {
+    react: true,
+    extensions: {
+        table: true,
+        tasklist: true,
+    },
+}
+```
+
 [npm-image]: https://img.shields.io/npm/v/gfm.macro.svg?style=flat-square
 [npm-url]: https://www.npmjs.com/package/gfm.macro

@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@mvasilkov/cmark-gfm@^0.29.0-gfm.0.1":
-  version "0.29.0-gfm.0.1"
-  resolved "https://registry.yarnpkg.com/@mvasilkov/cmark-gfm/-/cmark-gfm-0.29.0-gfm.0.1.tgz#b7f7009c4bed06dd72af95d6c4e641b1f0167e63"
-  integrity sha512-tF00pnC2Rh417vsSfndRa12l8YS3dbZ39KPO5KHCBieIKGcCKg2BLS3sMACbVxPCd39Z4+sK6NrjRqDo1JXf7w==
+"@mvasilkov/cmark-gfm@^0.29.0-gfm.0.2":
+  version "0.29.0-gfm.0.2"
+  resolved "https://registry.yarnpkg.com/@mvasilkov/cmark-gfm/-/cmark-gfm-0.29.0-gfm.0.2.tgz#b53c472f67ceafab9e2116a1dd747ea333a505b7"
+  integrity sha512-20nNccOW28dE8g4/GfACbmSNCbgvKLabPfEx34OsOMK9cVuG7/Qe1CH0b7Cuipogv3Z0fCF1FQ8lkf8+ktglRQ==
   dependencies:
     bindings "^1.5.0"
     node-addon-api "*"

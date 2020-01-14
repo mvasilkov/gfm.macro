@@ -1,6 +1,6 @@
 {
   "name": "gfm.macro",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "GitHub Flavored Markdown Babel macro converts Markdown to JSX at compile time using the cmark-gfm C library.",
   "keywords": [
     "markdown",
@@ -19,7 +19,7 @@
   "author": "Mark Vasilkov (https://github.com/mvasilkov)",
   "license": "MIT",
   "dependencies": {
-    "@mvasilkov/cmark-gfm": "^0.29.0-gfm.0.1"
+    "@mvasilkov/cmark-gfm": "^0.29.0-gfm.0.2"
   },
   "peerDependencies": {
     "babel-plugin-macros": "^2.8.0"

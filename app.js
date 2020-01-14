@@ -1,6 +1,20 @@
 const cmark = require('@mvasilkov/cmark-gfm')
 const { createMacro } = require('babel-plugin-macros')
 
+const defaultOptions = {
+    react: true,
+    extensions: {
+        // autolink: true,
+        table: true,
+        tasklist: true,
+    },
+}
+
+function getOptions(opt) {
+    if (opt) return Object.assign({}, defaultOptions, opt.evaluate().value)
+    return defaultOptions
+}
+
 const getFilename = (function () {
     let n = -1
 
@@ -11,8 +25,8 @@ const getFilename = (function () {
 })()
 
 function render(babel) {
-    return function _render(string) {
-        string = cmark.renderHtmlSync(string)
+    return function _render(string, options) {
+        string = cmark.renderHtmlSync(string, options)
 
         const { ast } = babel.transformSync(
             `<React.Fragment>${string}</React.Fragment>`,
@@ -28,12 +42,13 @@ function render(babel) {
 
 function replaceFunction(argumentsPaths, render) {
     const string = argumentsPaths[0].evaluate().value
-    argumentsPaths[0].parentPath.replaceWithMultiple(render(string))
+    const options = getOptions(argumentsPaths[1])
+    argumentsPaths[0].parentPath.replaceWithMultiple(render(string, options))
 }
 
 function replaceTagged(quasiPath, render) {
     const string = quasiPath.parentPath.get('quasi').evaluate().value
-    quasiPath.parentPath.replaceWithMultiple(render(string))
+    quasiPath.parentPath.replaceWithMultiple(render(string, defaultOptions))
 }
 
 function gfm({ references, state, babel }) {
